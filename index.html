@@ -7,10 +7,15 @@
     <title>Interactive Page</title>
     <link href="https://fonts.cdnfonts.com/css/onelove" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bebas-2" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 
     <style>
         @import url('https://fonts.cdnfonts.com/css/onelove');
         @import url('https://fonts.cdnfonts.com/css/poppins');
+        @import url('https://fonts.cdnfonts.com/css/bebas-2');
+        @import url('https://fonts.cdnfonts.com/css/montserrat');
 
         @font-face {
             font-family: Slussen;
@@ -80,7 +85,8 @@
         }
 
         .card-3 {
-            background: purple;
+            background: white;
+            overflow: hidden;
         }
 
         .card-4 {
@@ -422,6 +428,62 @@
             opacity: 0.4;
             border-bottom-left-radius: 15px;
         }
+
+        .kreuzberg-left {
+    width: 60%;
+}
+
+.kreuzberg-content {
+    display: flex;
+    height: 100%;
+    padding-bottom: 10rem;
+}
+
+.kreuzberg-main {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+}
+
+.heading-edit {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: black;
+    margin: 0;
+    line-height: 90px;
+    font-family: 'Bebas';
+    letter-spacing: 2px;
+}
+
+.kreuzberg p {
+    color: black;
+    font-size: 17px;
+    margin: 0px;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+    line-height: 27px;
+}
+
+.kreuzberg-right {
+    width: 40%;
+}
+
+.kreuzberg-main:before {
+    content: '';
+    background-image: url(https://amz.redesignweb.de/eurobest/assets/gif/glasses-sketch.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 430px;
+    height: 142px;
+    right: -54px;
+    opacity: 0.4;
+    bottom: 0;
+    transform: rotate(317deg);
+    z-index: -9;
+}
     </style>
 </head>
 
@@ -561,7 +623,21 @@
                 </div>
             </div>
             <div class="card card-3">
-                <h2>03</h2>
+                <div class="kreuzberg-main">
+                    <div class="content-width">
+                        <div class="kreuzberg-content">
+                            <div class="kreuzberg kreuzberg-left"></div>
+                            <div class="kreuzberg kreuzberg-right">
+                                <h2 class="heading-edit">Kreuzbergkinder</h2>
+                                <p>Kreuzbergkinder is a creative agency and design studio based in Berlin, Germany,
+                                    specializing in branding, web design, animation, and digital marketing. The name
+                                    "Kreuzbergkinder" translates to "Children of Kreuzberg," referencing the Kreuzberg
+                                    district in Berlin, known for its vibrant culture, diversity, and creative
+                                    atmosphere.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="card card-4">
                 <h2>04</h2>
