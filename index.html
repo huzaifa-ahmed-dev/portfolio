@@ -488,6 +488,10 @@
 </head>
 
 <body>
+    <div class="intro">
+    <h1 class="name">HUZAIFA AHMED</h1>
+    <p class="subtitle">Creative Developer Portfolio</p>
+  </div>
     <div class="cards-main">
         <div class="cards">
             <div class="card card-1">
@@ -708,7 +712,14 @@
             });
         });
     </script>
-
+  <script>
+    // Auto transition after animation (e.g. 3 seconds)
+    setTimeout(() => {
+      document.querySelector('.intro').style.display = 'none';
+      document.querySelector('.portfolio').style.display = 'block';
+      document.body.style.overflow = 'auto';
+    }, 3000); // 3000 = 3 seconds
+  </script>
 
 </body>
 
