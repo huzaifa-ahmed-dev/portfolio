@@ -86,15 +86,15 @@
     }
 
     .envelope {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      background: #ff7f7f;
-      border: 2px solid #cc5c5c;
-      overflow: hidden;
-      cursor: pointer;
-      z-index: 2;
-      transition: transform 0.4s ease;
+position: relative;
+    width: 600px;
+    height: 600px;
+    background: #ff7f7f;
+    border: 2px solid #cc5c5c;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.4s ease;
     }
 
     .envelope.clicked {
@@ -114,9 +114,9 @@ content: '';
     left: 0;
     width: 0;
     height: 0;
-    border-left: 138px solid transparent;
-    border-right: 158px solid transparent;
-    border-top: 120px solid #ff9999;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 150px solid #ff9999;
     z-index: 3;
     transform-origin: top;
     transition: transform 1s ease;
@@ -166,6 +166,7 @@ content: '';
 ;
     flex-direction: column;
     align-items: flex-start;
+          font-size: 30px;
     }
 
     .open .envelope-label {
@@ -270,3 +271,4 @@ With all my heart,
 
 </body>
 </html>
+
