@@ -4,729 +4,678 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Page</title>
-    <link href="https://fonts.cdnfonts.com/css/onelove" rel="stylesheet">
+    <title>Portfolio</title>
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/bebas-2" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-
-    <style>
-        @import url('https://fonts.cdnfonts.com/css/onelove');
-        @import url('https://fonts.cdnfonts.com/css/poppins');
-        @import url('https://fonts.cdnfonts.com/css/bebas-2');
-        @import url('https://fonts.cdnfonts.com/css/montserrat');
-
-        @font-face {
-            font-family: Slussen;
-            src: url(/fonts/Slussen-Compressed-Black.woff2) format("woff2");
-            font-display: swap;
-            font-weight: 900;
-            font-stretch: compressed;
-        }
-
-        body {
-            background: #000;
-            margin: 0;
-            padding: 0;
-            color: #ff98a2;
-            font-family: Slussen;
-            overflow-x: hidden;
-            /* Prevent horizontal scrolling */
-        }
-
-        h1 {
-            font-family: 'onelove';
-        }
-
-        h2 {
-            font-family: 'Poppins';
-        }
-
-        p {
-            font-family: 'Poppins';
-        }
-
-        .cards {
-            height: 100vh !important;
-            /* Increase height to make scrolling slower */
-            width: 95%;
-            margin: auto;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .card {
-            position: absolute;
-            width: 100%;
-            height: 90vh;
-            background: #f1f1f1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 20px;
-            top: 45px;
-            flex-direction: column;
-        }
-
-
-        .card-1 {
-            background: #E2E2E2;
-        }
-
-        .card-2 {
-            background: #efa765;
-            display: flex;
-            justify-content: flex-end;
-            position: relative;
-        }
-
-        .card-3 {
-            background: white;
-            overflow: hidden;
-        }
-
-        .card-4 {
-            background: blue;
-        }
-
-        .card-5 {
-            background: yellow;
-        }
-
-        .card-6 {
-            background: green;
-        }
-
-        .card-7 {
-            background: red;
-        }
-
-        .card-8 {
-            background: orange;
-        }
-
-        .card-9 {
-            background: silver;
-        }
-
-        .card-10 {
-            background: skyblue;
-        }
-
-        .heading-one {
-            font-size: 135px;
-            line-height: 145px;
-            margin: 0;
-            color: black;
-            font-weight: 100;
-            margin-bottom: -46px;
-            text-align: center;
-        }
-
-        .header-inner ul {
-            padding: 0;
-            display: flex;
-            gap: 50px;
-            margin: 0;
-        }
-
-        .header-inner ul li {
-            list-style-type: none;
-        }
-
-        .header-inner ul li a {
-            text-decoration: none;
-            font-family: 'Poppins';
-            color: black;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .header-main {
-            background-color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            position: fixed;
-            top: 50px;
-            opacity: 0;
-            transition: all 0.3s linear;
-        }
-
-        .header-main:hover {
-            opacity: 1;
-        }
-
-        .heading-two {
-            margin: 0;
-            text-align: center;
-            font-size: 120px;
-            line-height: 130px;
-            color: white;
-            position: relative;
-            z-index: 99;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .heading-two-edit {
-            -webkit-text-stroke: 1px black;
-            -webkit-text-fill-color: transparent;
-            -webkit-animation: fill 0.5s infinite alternate;
-            margin-top: -100px;
-            position: relative;
-            z-index: 9;
-            opacity: 0.1;
-            font-weight: 400;
-        }
-
-        .banner-inner-content-two {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-        }
-
-        .banner-inner-content-two p {
-            color: black;
-            font-size: 14px;
-        }
-
-        .header-main:hover {
-            opacity: 1;
-        }
-
-        button {
-            position: relative;
-            padding: 12px 35px;
-            background: #000;
-            font-size: 17px;
-            font-weight: 1000;
-            color: #ffffff;
-            border: 3px solid #000;
-            border-radius: 8px;
-            box-shadow: 0 0 0 #ffffff;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-        }
-
-        .star-1 {
-            position: absolute;
-            top: 20%;
-            left: 20%;
-            width: 25px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
-        }
-
-        .star-2 {
-            position: absolute;
-            top: 45%;
-            left: 45%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 1scubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-3 {
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-4 {
-            position: absolute;
-            top: 20%;
-            left: 40%;
-            width: 8px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-5 {
-            position: absolute;
-            top: 25%;
-            left: 45%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
-        }
-
-        .star-6 {
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0 #4c83fa);
-            z-index: -5;
-            transition: all 0.8s ease;
-        }
-
-        button:hover {
-            background: transparent;
-            color: #000;
-            box-shadow: 0 0 0px #4c83fa;
-        }
-
-        button:hover .star-1 {
-            position: absolute;
-            top: -80%;
-            left: -30%;
-            width: 25px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        button:hover .star-2 {
-            position: absolute;
-            top: -0%;
-            left: 10%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        button:hover .star-3 {
-            position: absolute;
-            top: 55%;
-            left: 25%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        button:hover .star-4 {
-            position: absolute;
-            top: 30%;
-            left: 80%;
-            width: 8px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        button:hover .star-5 {
-            position: absolute;
-            top: 25%;
-            left: 115%;
-            width: 15px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        button:hover .star-6 {
-            position: absolute;
-            top: 5%;
-            left: 60%;
-            width: 5px;
-            height: auto;
-            filter: drop-shadow(0 0 0px #4c83fa);
-            z-index: 2;
-        }
-
-        .fil0 {
-            fill: #000;
-        }
-
-        .content-width {
-            width: 1350px;
-            margin: 0 auto;
-        }
-
-        .top-bar {
-
-            position: fixed;
-            top: 50px;
-        }
-
-        .tob-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-
-        .top-left h2 {
-            margin: 0;
-            color: black;
-            font-family: 'onelove';
-            font-weight: bolder;
-            font-size: 35px;
-            line-height: 45px;
-        }
-
-        .banner-gif-section {
-            position: absolute;
-            right: 20px;
-            bottom: 35px;
-        }
-
-        .banner-gif-section img {
-            width: 60px;
-        }
-
-        .vedis-berlin-flex {
-            display: flex;
-        }
-
-        .vedis-left {
-            width: 40%;
-        }
-
-        .vedis-left h2 {
-            color: black;
-            font-family: 'Poppins';
-            font-size: 80px;
-            line-height: 90px;
-            margin: 0;
-        }
-
-        .vedis-left p {
-            font-size: 18px;
-            color: black;
-            margin: 0 5px;
-        }
-
-        .vedis-berlin-main {
-            padding-bottom: 10rem;
-        }
-
-        .card-2:before {
-            content: '';
-            background-image: url(https://amz.redesignweb.de/eurobest/assets/gif/sketch-burger.webp);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            position: absolute;
-            width: 500px;
-            bottom: 0;
-            height: 315px;
-            z-index: -9;
-            left: 0;
-            opacity: 0.4;
-            border-bottom-left-radius: 15px;
-        }
-
-        .kreuzberg-left {
-    width: 60%;
-}
-
-.kreuzberg-content {
-    display: flex;
-    height: 100%;
-    padding-bottom: 10rem;
-}
-
-.kreuzberg-main {
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    position: relative;
-}
-
-.heading-edit {
-    font-size: 80px;
-    text-transform: uppercase;
-    color: black;
-    margin: 0;
-    line-height: 90px;
-    font-family: 'Bebas';
-    letter-spacing: 2px;
-}
-
-.kreuzberg p {
-    color: black;
-    font-size: 17px;
-    margin: 0px;
-    font-family: 'Montserrat';
-    letter-spacing: 1px;
-    line-height: 27px;
-}
-
-.kreuzberg-right {
-    width: 40%;
-}
-
-.kreuzberg-main:before {
-    content: '';
-    background-image: url(https://amz.redesignweb.de/eurobest/assets/gif/glasses-sketch.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
-    width: 430px;
-    height: 142px;
-    right: -54px;
-    opacity: 0.4;
-    bottom: 0;
-    transform: rotate(317deg);
-    z-index: -9;
-}
-    </style>
 </head>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/poppins');
+    @import url('https://fonts.cdnfonts.com/css/bebas-2');
+    @import url('https://fonts.cdnfonts.com/css/montserrat');
+
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        /* ensures smooth scroll when using JS */
+    }
+
+    p {
+        font-family: 'Poppins';
+    }
+
+    span {
+        font-family: 'Poppins';
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: 'montserrat';
+    }
+
+    li {
+        font-family: 'Poppins';
+    }
+
+    .main-div {
+        background-color: black;
+        padding: 30px;
+    }
+
+    .head-right img {
+        width: 30px;
+        height: auto;
+    }
+
+    .head-right {
+        text-align: right;
+    }
+
+    .location-box img {
+        width: 35px;
+        height: auto;
+    }
+
+    .location-box {
+        display: flex;
+        text-align: center;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 15px;
+        padding-top: 1rem;
+    }
+
+    .location-box p {
+        font-size: 18px;
+        color: white;
+        margin: 0;
+    }
+
+    .head-left img {
+        width: 30px;
+        animation: animName 15s linear infinite;
+    }
+
+    @keyframes animName {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .info-box-main {
+        width: 360px;
+        width: 360px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transform: translate(0px, 30px);
+    }
+
+    .info-top p {
+        color: white;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .dot {
+        background-color: red;
+        width: 10px;
+        height: 10px;
+        border-radius: 50px;
+    }
+
+    .info-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: center;
+        border-radius: 50px;
+        padding: 15px;
+        margin-bottom: 15px;
+        border: 1px solid #494949;
+    }
+
+    .my-image img {
+        margin-bottom: -5px;
+        width: 100%;
+    }
+
+    .my-image {
+        background-color: orange;
+        text-align: center;
+        padding: 70px;
+        padding-bottom: 0;
+        border-radius: 8px;
+    }
+
+    .info-center-content p {
+        font-size: 20px;
+        color: white;
+        margin: 0;
+    }
+
+    .info-center-content span {
+        color: white;
+        font-size: 16px;
+    }
+
+    .info-center {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-center-content {
+        padding-top: 15px;
+        text-align: center;
+    }
+
+    .info-bottom-icons a img {
+        width: 15px;
+        height: auto;
+    }
+
+    .info-bottom-icons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .info-box {
+        border-radius: 25px;
+        padding: 30px;
+        background-color: rgb(17, 17, 17);
+        backdrop-filter: blur(36px);
+        box-shadow: 0px 0px 20px 0px rgba(103, 103, 103, 0.2509803922) inset;
+    }
+
+    .head-left {
+        padding-bottom: 3rem;
+    }
+
+    .info-bottom-icons a {
+        background-color: #313131;
+        padding: 13px 15px;
+        border-radius: 50px;
+        margin: 0;
+    }
+
+    .info-bottom {
+        padding-top: 2rem;
+    }
+
+    .info-bot-btn a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        border: 1px solid #494949;
+        border-radius: 50px;
+        width: 100%;
+        display: block;
+        padding: 15px 0px;
+        text-align: center;
+    }
+
+    .info-bot-btn {
+        padding-top: 2rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        background: #1a1a1a;
+        border-radius: 50px;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        z-index: 1000;
+    }
+
+    .sidebar a {
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .sidebar a.active {
+        background: white;
+        color: #111;
+    }
+
+    .content {
+        margin: auto;
+        margin-left: 400px;
+        margin-right: 100px;
+        padding-top: 5rem;
+    }
+
+    #works {}
+
+    #about {
+        background: #444;
+    }
+
+    #contact {
+        background: #555;
+    }
+
+    .sec-home-content h1 {
+        font-size: 40px;
+        color: white;
+        margin: 0;
+        padding-top: 2rem;
+    }
+
+    .sec-home-content ul li {
+        color: #717171;
+        font-size: 16px;
+    }
+
+    .sec-home-content p {
+        font-size: 16px;
+        color: white;
+        margin: 0;
+        padding-top: 1rem;
+    }
+
+    .sec-home-content ul {
+        padding-left: 18px;
+        margin: 0;
+    }
+
+    .section-home {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .experties p {
+        font-size: 16px;
+        margin: 0;
+        color: white;
+        background-color: #131313;
+        padding: 10px 30px;
+        border-radius: 50px;
+        transition: all 0.3s linear;
+        cursor: pointer;
+    }
+
+    .experties {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-top: 5rem;
+    }
+
+    .experties p:hover {
+        color: black;
+        background-color: white;
+    }
+
+    .exp-content-inner ul li {
+        font-size: 16px;
+        color: #717171;
+    }
+
+    .exp-content-inner ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .experience {
+        padding-top: 5rem;
+    }
+
+    .exp-content-inner p {
+        font-size: 40px;
+        color: white;
+    }
+
+    .exp-top p {
+        color: #717171;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .exp-bottom {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+    }
+
+    .exp-bottom p {
+        color: white;
+        font-size: 25px;
+        margin: 10px 0px;
+        transition: 0.3s all linear;
+    }
+
+    .exp-main {
+        border-bottom: 1px solid #717171;
+        padding-top: 2rem;
+        cursor: pointer;
+        transition: 0.3s all linear;
+    }
+
+    .exp-main:first-child {
+        padding-top: 0;
+    }
+
+
+
+    .exp-main:hover .exp-bottom p {
+        color: orange;
+    }
+
+
+    .exp-main:hover {
+        border-color: orange;
+    }
+
+    .home-sec-video img {
+        width: 300px;
+        webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background: rgb(255 255 255 / 3%);
+        box-shadow: 0px 0px 20px 0px rgba(103, 103, 103, 0.2509803922) inset;
+        border-radius: 30px;
+    }
+
+    .home-sec-video {
+        text-align: right;
+        padding-top: 4rem;
+    }
+
+    .work-content h2 {
+        font-size: 50px;
+        line-height: 60px;
+        margin: 0;
+        text-align: center;
+        color: white;
+        border-radius: 15px;
+        padding: 30px 0px;
+        background: rgb(17, 17, 17);
+        box-shadow: 0px 0px 20px 0px rgba(103, 103, 103, 0.25) inset;
+    }
+
+    .work-section {
+        max-width: 800px;
+        margin: auto;
+        padding-top: 5rem;
+    }
+
+    .work-content {
+        padding-bottom: 3rem;
+    }
+
+    .example-one img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .ex-inner-one span {
+        color: #ffffffb2;
+        font-size: 14px;
+    }
+
+    .ex-inner-one h2 {
+        color: white;
+        margin: 0;
+        font-size: 30px;
+    }
+
+    .ex-inner-one p {
+        color: white;
+        margin: 0;
+        background-color: #151515;
+        width: 100px;
+        text-align: center;
+        border-radius: 50px;
+        padding: 5px 0px;
+        font-size: 14px;
+    }
+
+    .ex-inner-two img {
+        width: 35px;
+        border: 1px solid rgba(255, 255, 255, 0.3019607843);
+        padding: 29px;
+    }
+
+    .example-inner-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.5019607843);
+        backdrop-filter: blur(16px);
+        border-radius: 25px;
+        padding: 0px 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: absolute;
+        width: 80%;
+        bottom: 20px;
+        margin: auto;
+        transform: translate(-50%, 0%);
+        left: 50%;
+    }
+
+    .work-examples:nth-child(2) {
+        padding-top: 0rem;
+    }
+
+    .work-examples {
+        padding-top: 6rem;
+    }
+
+    .example-one {
+        position: relative;
+    }
+
+    .ex-inner-one {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+</style>
 
 <body>
-    <div class="intro">
-    <h1 class="name">HUZAIFA AHMED</h1>
-    <p class="subtitle">Creative Developer Portfolio</p>
-  </div>
-    <div class="cards-main">
-        <div class="cards">
-            <div class="card card-1">
-                <div class="top-bar">
-                    <div class="content-width">
-                        <div class="tob-bar-content">
-                            <div class="top-left">
-                                <h2>HA</h2>
-                            </div>
-                            <div class="top-right">
-                                <button>
-                                    Let's Talk
-                                    <div class="star-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="star-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="star-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="star-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="star-5">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                    <div class="star-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
-                                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-                                            viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <defs></defs>
-                                            <g id="Layer_x0020_1">
-                                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                                <path class="fil0"
-                                                    d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z">
-                                                </path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="header-main">
-                    <div class="header-inner">
-                        <ul>
-                            <li><a href="#">Contact Me</a></li>
-                            <li><a href="#">About Me</a></li>
-                            <li><a href="#">Projects</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="portolio-banner-main">
-                    <div class="banner-inner-content">
-                        <h1 class="heading-one">Website Designer</h1>
-                        <h2 class="heading-two">Portfolio</h2>
-                        <h2 class="heading-two heading-two-edit">Portfolio</h2>
-                    </div>
-                    <div class="banner-inner-content-two">
-                        <p>Huzaifa Ahmed</p>
-                    </div>
-                </div>
-                <div class="banner-gif-section">
-                    <img src="assets/gif/turn-down.gif" alt="">
+    <div class="main-div">
+        <header>
+            <div class="head-top">
+                <div class="head-right">
+                    <img src="images/menu.png" alt="">
                 </div>
             </div>
-            <div class="card card-2">
-                <div class="vedis-berlin-main">
-                    <div class="content-width">
-                        <div class="vedis-berlin-flex">
-                            <div class="vedis-left">
-                                <h2>VEDIS BERLIN</h2>
-                                <p>Vedis Berlin is a well-known Indian restaurant located in Berlin, Germany. It
-                                    typically serves a variety of Indian dishes, including curries, tandoori
-                                    specialties, and vegetarian options. </p>
-                            </div>
-                            <div class="vedis-right"></div>
-                        </div>
+        </header>
+        <div class="location-box">
+            <img src="icon/pin.png" alt="">
+            <p>United Arab Emirates (U.A.E)</p>
+        </div>
+        <div class="info-box-main">
+            <div class="head-left">
+                <img src="images/setting.png" alt="">
+            </div>
+            <div class="info-box">
+                <div class="info-top">
+                    <div class="dot"></div>
+                    <p>Availabel for WORK</p>
+                </div>
+                <div class="info-center">
+                    <div class="my-image">
+                        <img src="images/emoji.webp" alt="">
+                    </div>
+                    <div class="info-center-content">
+                        <p>imkhuzaifa-ahmad@hotmail.com</p>
+                        <span>Based in United Arab Emirates (U.A.E)</span>
                     </div>
                 </div>
-            </div>
-            <div class="card card-3">
-                <div class="kreuzberg-main">
-                    <div class="content-width">
-                        <div class="kreuzberg-content">
-                            <div class="kreuzberg kreuzberg-left"></div>
-                            <div class="kreuzberg kreuzberg-right">
-                                <h2 class="heading-edit">Kreuzbergkinder</h2>
-                                <p>Kreuzbergkinder is a creative agency and design studio based in Berlin, Germany,
-                                    specializing in branding, web design, animation, and digital marketing. The name
-                                    "Kreuzbergkinder" translates to "Children of Kreuzberg," referencing the Kreuzberg
-                                    district in Berlin, known for its vibrant culture, diversity, and creative
-                                    atmosphere.</p>
-                            </div>
-                        </div>
+                <div class="info-bottom">
+                    <div class="info-bottom-icons">
+                        <a href="#"><img src="icon/facebook.png" alt=""></a>
+                        <a href="#"><img src="icon/linkedin.png" alt=""></a>
+                        <a href="#"><img src="icon/twitter.png" alt=""></a>
+                    </div>
+                    <div class="info-bot-btn">
+                        <a href="#">
+                            Get Started
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="card card-4">
-                <h2>04</h2>
-            </div>
-            <div class="card card-5">
-                <h2>05</h2>
-            </div>
-            <div class="card card-6">
-                <h2>06</h2>
-            </div>
-            <div class="card card-7">
-                <h2>07</h2>
-            </div>
-            <div class="card card-8">
-                <h2>08</h2>
-            </div>
-            <div class="card card-9">
-                <h2>09</h2>
-            </div>
-            <div class="card card-10">
-                <h2>10</h2>
             </div>
         </div>
+
+        <div class="content">
+            <section id="home">
+                <div class="section-home">
+                    <div class="sec-home-content">
+                        <ul>
+                            <li>Introduction</li>
+                        </ul>
+                        <h1>Huzaifa Ahmed</h1>
+                        <p>Creative and detail-oriented Frontend Engineer passionate about building responsive,
+                            user-friendly, and visually appealing websites. Skilled in modern web technologies, UI/UX
+                            design, and delivering seamless digital experiences.</p>
+                    </div>
+                    <div class="experties">
+                        <p>Frontend Development</p>
+                        <p>UI/UX Design</p>
+                        <p>Performance Optimization</p>
+                    </div>
+                    <div class="home-sec-video">
+                        <img src="images/teddy-bear-video.gif" alt="">
+                    </div>
+                    <div class="experience">
+                        <div class="exp-content-inner">
+                            <ul>
+                                <li>Experiences</li>
+                            </ul>
+                            <p>Frontend Engineer with 4+ years crafting responsive, user-focused websites and creative
+                                digital solutions.</p>
+                        </div>
+                        <div class="experience-top-main">
+                            <div class="exp-main">
+                                <div class="exp-top">
+                                    <p>Smart Print Solution</p>
+                                </div>
+                                <div class="exp-bottom">
+                                    <p>Web Designer</p>
+                                    <p>2023 – Present, UAE</p>
+                                </div>
+                            </div>
+                            <div class="exp-main">
+                                <div class="exp-top">
+                                    <p>Epic Studio</p>
+                                </div>
+                                <div class="exp-bottom">
+                                    <p>Frontend Designer</p>
+                                    <p>2020 – 2022</p>
+                                </div>
+                            </div>
+                            <div class="exp-main">
+                                <div class="exp-top">
+                                    <p>Shift Enterprises</p>
+                                </div>
+                                <div class="exp-bottom">
+                                    <p>IT Support Specialist</p>
+                                    <p>2021 – 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="works">
+                <div class="work-section">
+                    <div class="work-content">
+                        <h2>Selected Work</h2>
+                    </div>
+                    <div class="work-examples">
+                        <div class="example-one">
+                            <img src="images/works-1.jpg" alt="">
+                            <div class="example-inner-content">
+                                <div class="ex-inner-one">
+                                    <span>Website Design</span>
+                                    <h2>Vedis Berlin</h2>
+                                    <p>2025</p>
+                                </div>
+                                <div class="ex-inner-two">
+                                    <img src="icon/right-arrow.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-examples">
+                        <div class="example-one">
+                            <img src="images/works-1.jpg" alt="">
+                            <div class="example-inner-content">
+                                <div class="ex-inner-one">
+                                    <span>Website Design</span>
+                                    <h2>Vedis Berlin</h2>
+                                    <p>2025</p>
+                                </div>
+                                <div class="ex-inner-two">
+                                    <img src="icon/right-arrow.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-examples">
+                        <div class="example-one">
+                            <img src="images/works-1.jpg" alt="">
+                            <div class="example-inner-content">
+                                <div class="ex-inner-one">
+                                    <span>Website Design</span>
+                                    <h2>Vedis Berlin</h2>
+                                    <p>2025</p>
+                                </div>
+                                <div class="ex-inner-two">
+                                    <img src="icon/right-arrow.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="about">🙋 About Me</section>
+            <section id="contact">📩 Contact</section>
+        </div>
+        <div class="sidebar">
+            <a href="#home" class="tab-link active" data-tab="home"><i class="fa fa-home"></i></a>
+            <a href="#works" class="tab-link" data-tab="works"><i class="fa fa-briefcase"></i></a>
+            <a href="#about" class="tab-link" data-tab="about"><i class="fa fa-user"></i></a>
+            <a href="#contact" class="tab-link" data-tab="contact"><i class="fa fa-envelope"></i></a>
+        </div>
+
+
     </div>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
     <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        const links = document.querySelectorAll('.tab-link');
+        const sections = document.querySelectorAll('section');
 
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".cards",
-                pin: true,
-                pinSpacing: true,
-                start: " top",
-                end: "+=7000", // Scroll duration
-                scrub: 4, // Smooth scrub animation
-                markers: true,
-            }
-        });
-
-        const cards = document.querySelectorAll(".card");
-
-        cards.forEach((card, index) => {
-            // Animate the current card into view
-            if (index > 0) {
-                timeline.from(card, {
-                    yPercent: 150,
-                    ease: "none",
-                });
-            }
-
-            // Apply blur and shrink effect to the previous card
-            if (index > 0) {
-                timeline.to(cards[index - 1], {
-                    scale: 0.55, // Shrink the card
-                    filter: "blur(8px)", // Apply blur
-                    ease: "none",
-                }, "-=0.3");
-            }
-
-            // Remove blur and scale effect for the current card
-            timeline.to(card, {
-                scale: 1, // Restore the original size
-                filter: "blur(0px)", // Remove blur effect
-                ease: "none",
+        // Smooth scroll on click
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // stop instant jump
+                const target = document.getElementById(link.dataset.tab);
+                target.scrollIntoView({ behavior: "smooth" }); // smooth scroll
             });
         });
-    </script>
-  <script>
-    // Auto transition after animation (e.g. 3 seconds)
-    setTimeout(() => {
-      document.querySelector('.intro').style.display = 'none';
-      document.querySelector('.portfolio').style.display = 'block';
-      document.body.style.overflow = 'auto';
-    }, 3000); // 3000 = 3 seconds
-  </script>
 
+        // Auto highlight on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    links.forEach(l => l.classList.remove('active'));
+                    document.querySelector(`.tab-link[data-tab="${entry.target.id}"]`)
+                        .classList.add('active');
+                }
+            });
+        }, { threshold: 0.6 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 </body>
 
 </html>
-
-
-
-
-
-
